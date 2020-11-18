@@ -7,6 +7,6 @@ def delete():
     books = r.json()
     for book in books:
         requests.delete(f"{url}/{book['isbn']}")
-    print("All items deleted!")
+    print("All books deleted!")
 
 delete()

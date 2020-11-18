@@ -4,14 +4,14 @@ import requests
 
 def most_freq_char():
     r = requests.get("http://0.0.0.0:8000/books")
-    l = r.json()
+    books = r.json()
 
     #create list with titles
 
-    titles = []
-    for i in l:
-        x = i['title']
-        titles.append(x)
+    titles = [book['title'] for book in books]
+    #for i in l:
+    #    x = i['title']
+    #    titles.append(x)
     
     #titles == list of all book titles
     #split book titles in a list of chars
@@ -33,3 +33,12 @@ def most_freq_char():
 
 
 most_freq_char()
+
+#soluç~ao felipe
+'''#or title in titles:
+    ...:     for char in [c for c in title]:
+    ...:         if freqs.get(char) is not None:
+    ...:             freqs[char] += 1
+    ...:         else:
+    ...:             freqs[char] = 1
+'''

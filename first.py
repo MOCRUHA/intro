@@ -4,13 +4,13 @@ import requests
 
 def max_page_number():
     r = requests.get("http://0.0.0.0:8000/books")
-    l = r.json()
-    m = 0
-    for i in l:
-        if m < i['pages']:
-            m = i['pages']
-            x = i
-    print(x)
+    books = r.json()
+    max_pages = 0
+    for book in books:
+        if max_pages < i['pages']:
+            max_pages = i['pages']
+            dic = book
+    print(dic)
 
            
 max_page_number()
